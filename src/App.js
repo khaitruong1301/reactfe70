@@ -1,5 +1,9 @@
 // import HandleEventRCC from "./EventHandler/HandleEventRCC";
 
+import BaiTapQLSP from "./Props/BaiTapQLSP/BaiTapQLSP";
+import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
+import DemoProps from "./Props/DemoProps/DemoProps";
+import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
 
 // import BaiTapChonXe from "./StateDemo/BaiTapChonXe/BaiTapChonXe";
@@ -17,7 +21,11 @@ function App() {
       {/* <p className='pColorGreen'>hello cyberosft</p> */}
       {/* <BaiTapChonXe /> */}
       {/* <BaiTapTangGiamFont /> */}
-      <RenderWithMap />
+      {/* <RenderWithMap /> */}
+      {/* <DemoProps /> */}
+      {/* <BaiTapQLSP /> */}
+      {/* <BaiTapXemChiTiet /> */}
+      <ExerciseCarStore />
     </div>
   );
 }
