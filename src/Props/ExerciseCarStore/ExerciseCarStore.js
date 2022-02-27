@@ -19,7 +19,8 @@ export default class ExerciseCarStore extends Component {
     xemChiTiet = (carItem) => {
         this.setState({
             sanPhamChiTiet:carItem
-        })
+        });
+        debugger;
     }
 
     render() {

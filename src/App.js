@@ -1,8 +1,10 @@
 // import HandleEventRCC from "./EventHandler/HandleEventRCC";
 
+import BaiTapChonXeRedux from "./DemoRedux/BaiTapChonXeRedux/BaiTapChonXeRedux";
 import BaiTapQLSP from "./Props/BaiTapQLSP/BaiTapQLSP";
 import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
 import DemoProps from "./Props/DemoProps/DemoProps";
+import DemoPropsChildren from "./Props/DemoPropsChildren/DemoPropsChildren";
 import ExerciseCarStore from "./Props/ExerciseCarStore/ExerciseCarStore";
 import RenderWithMap from "./RenderWithMap/RenderWithMap";
 
@@ -24,8 +26,10 @@ function App() {
       {/* <RenderWithMap /> */}
       {/* <DemoProps /> */}
       {/* <BaiTapQLSP /> */}
-      {/* <BaiTapXemChiTiet /> */}
-      <ExerciseCarStore />
+      <BaiTapXemChiTiet />
+      {/* <ExerciseCarStore /> */}
+      {/* <DemoPropsChildren /> */}
+      {/* <BaiTapChonXeRedux /> */}
     </div>
   );
 }
