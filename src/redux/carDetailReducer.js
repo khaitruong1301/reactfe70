@@ -4,6 +4,8 @@ const defaultState = {name:'name default', img:'https://picsum.photos/200'}
 
 
 export const carDetailReducer = (state = defaultState, action) => {
+    // console.log('action',action)
+    
     switch(action.type) {
         case 'XEM_CHI_TIET': {
 

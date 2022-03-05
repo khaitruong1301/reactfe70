@@ -8,7 +8,7 @@ const stateDefault = {
 
 
 export const gioHangReducer = (state=stateDefault,action) => {
-
+    // console.log('action',action)
     switch(action.type) {
 
         case 'THEM_GIO_HANG' :{
@@ -27,6 +27,42 @@ export const gioHangReducer = (state=stateDefault,action) => {
             console.log('giỏ hàng', state.gioHang);
             return {...state};
         }
+        case 'XOA_GIO_HANG': {
+
+            let gioHang = [...state.gioHang];
+
+            gioHang = gioHang.filter(sp => sp.maSP !== action.maSanPhamClick);
+
+            //CẬP NHẬT LẠI state.gioHang
+            state.gioHang = gioHang;
+
+            return {...state}
+        }
+        case 'TANG_GIAM_SL': {
+            let gioHang = [...state.gioHang];
+            //Tìm ra sản phầm cần tăng giảm số lượng
+            let spTangGiam =gioHang.find(sp=>sp.maSP === action.maSanPham);
+            if(spTangGiam) {
+                spTangGiam.soLuong += action.soLuong;
+                // if(spTangGiam.soLuong < 1) {
+                //     alert('Số lượng tối thiểu là 1!');
+                //     spTangGiam.soLuong -= action.soLuong;
+                //     return {...state};
+                // }
+                if(spTangGiam.soLuong < 1) {
+                    if(window.confirm('Bạn có muốn xoá sản phẩm hay không')) {
+                        state.gioHang = gioHang.filter(sp=>sp.maSP !== action.maSanPham);
+                        return {...state};
+                    }else {
+                        spTangGiam.soLuong -= action.soLuong;
+                    }
+                }
+            }
+            //Gán lại state giỏ hàng
+            state.gioHang = gioHang;
+            return {...state};
+        }
+        
         default : return state;
     }
 }

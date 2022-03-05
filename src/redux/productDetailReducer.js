@@ -5,6 +5,7 @@ const stateDefault = { "maSP": 3, "tenSP": "Iphone XS Max", "manHinh": "OLED, 6.
 
 
 export const productDetailReducer = (state = stateDefault,action) => {
+    // console.log('action',action)
 
     switch(action.type) {
         case 'XEM_CHI_TIET_SP': {

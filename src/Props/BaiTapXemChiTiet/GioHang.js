@@ -26,9 +26,19 @@ class GioHang extends Component {
                             <td><img src={spGH.hinhAnh} alt='...' width={50} height={50} /></td>
                             <td>{spGH.tenSP}</td>
                             <td>{spGH.giaBan}</td>
-                            <td>{spGH.soLuong}</td>
+                            <td>
+                                <button className='btn btn-primary' onClick={()=>{
+                                    this.props.tangGiamSoLuong(spGH.maSP,1)
+                                }}>+</button>
+                                {spGH.soLuong}
+                                <button className='btn btn-primary ml-2' onClick={()=>{
+                                    this.props.tangGiamSoLuong(spGH.maSP,-1);
+                                }}>-</button>
+                            </td>
                             <td>{spGH.giaBan * spGH.soLuong}</td>
-                            <td><button className='btn btn-danger'>Xoá</button></td>
+                            <td><button className='btn btn-danger' onClick={() => {
+                                this.props.xoaGioHang(spGH.maSP);
+                            }}>Xoá</button></td>
                         </tr>
                     })}
                 </tbody>
@@ -40,9 +50,35 @@ class GioHang extends Component {
 const mapStateToProps = (rootReducer) => {
 
     return {
-        gioHang: rootReducer.gioHangReducer.gioHang
+        gioHang: rootReducer.gioHangReducer.gioHang,
+
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+
+    return {
+        xoaGioHang: (maSanPhamClick) => {
+            console.log('maSanPham',maSanPhamClick);
+            const action = {
+                type:'XOA_GIO_HANG',
+                maSanPhamClick
+            }
+            //Gửi dữ liệu lên redux
+            dispatch(action);
+        },
+        tangGiamSoLuong : (maSanPham,soLuong) => {
+            // console.log('maSP',maSanPham);
+            // console.log('soLuong',soLuong);
+            const action = {
+                type:'TANG_GIAM_SL',
+                maSanPham,
+                soLuong
+            };
+            //Sử dụng hàm dispatch đưa dữ liệu lên redux
+            dispatch(action);
+        }
     }
 }
 
 
-export default connect(mapStateToProps)(GioHang);
+export default connect(mapStateToProps,mapDispatchToProps)(GioHang);
