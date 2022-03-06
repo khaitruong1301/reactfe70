@@ -2,6 +2,7 @@
 
 import BaiTapChonXeRedux from "./DemoRedux/BaiTapChonXeRedux/BaiTapChonXeRedux";
 import BaiTapGameXucXac from "./DemoRedux/BaiTapGameXucXac/BaiTapGameXucXac";
+import BaiTapQuanLyNguoiDung from "./DemoRedux/BaiTapQuanLyNguoiDung/BaiTapQuanLyNguoiDung";
 import BaiTapQLSP from "./Props/BaiTapQLSP/BaiTapQLSP";
 import BaiTapXemChiTiet from "./Props/BaiTapXemChiTiet/BaiTapXemChiTiet";
 import DemoProps from "./Props/DemoProps/DemoProps";
@@ -31,7 +32,8 @@ function App() {
       {/* <ExerciseCarStore /> */}
       {/* <DemoPropsChildren /> */}
       {/* <BaiTapChonXeRedux /> */}
-      <BaiTapGameXucXac />
+      {/* <BaiTapGameXucXac /> */}
+      <BaiTapQuanLyNguoiDung />
     </div>
   );
 }

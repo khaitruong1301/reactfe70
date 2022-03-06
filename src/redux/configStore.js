@@ -1,5 +1,6 @@
 import {combineReducers, createStore} from 'redux';
 import { baiTapGameXucXacReducer } from './baiTapGameXucXacReducer';
+import { baiTapQuanLyNguoiDungReducer } from './baiTapQuanLyNguoiDungReducer';
 import { carDetailReducer } from './carDetailReducer';
 import { gioHangReducer } from './gioHangReducer';
 import { productDetailReducer } from './productDetailReducer';
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     carDetailReducer,
     productDetailReducer,
     gioHangReducer,
-    baiTapGameXucXacReducer
+    baiTapGameXucXacReducer,
+    baiTapQuanLyNguoiDungReducer
     
 
 
