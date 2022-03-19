@@ -28,6 +28,12 @@ export default class HeaderHome extends Component {
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
                                 <NavLink className="dropdown-item" to="/hookusestate">UseState</NavLink>
+                                <NavLink className="dropdown-item" to="/hookuseeffect">useEffect</NavLink>
+                                <NavLink className="dropdown-item" to="/hookusecallback">useCallBack</NavLink>
+                                <NavLink className="dropdown-item" to="/hookusememo">useMemo</NavLink>
+                                <NavLink className="dropdown-item" to="/hookuseref">useRef</NavLink>
+                                <NavLink className="dropdown-item" to="/hookredux">hookredux</NavLink>
+                           
                             </div>
                         </li>
                     </ul>
