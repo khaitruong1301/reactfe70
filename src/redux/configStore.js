@@ -1,12 +1,14 @@
-import {combineReducers, createStore} from 'redux';
+import {applyMiddleware, combineReducers, createStore,compose} from 'redux';
 import { baiTapGameXucXacReducer } from './Reducers/baiTapGameXucXacReducer';
 import { baiTapQuanLyNguoiDungReducer } from './Reducers/baiTapQuanLyNguoiDungReducer';
 import { carDetailReducer } from './Reducers/carDetailReducer';
 import { FakeBookAppReducer } from './Reducers/FakeBookAppReducer';
 import { gioHangReducer } from './Reducers/gioHangReducer';
 import { productDetailReducer } from './Reducers/productDetailReducer';
+import { toDoListReducer } from './Reducers/toDoListReducer';
 
-
+import reduxThunk from 'redux-thunk';
+import { modalReducer } from './Reducers/modalReducer';
 
 const rootReducer = combineReducers({
     //Nơi chứa các state của ứng dụng
@@ -15,8 +17,13 @@ const rootReducer = combineReducers({
     gioHangReducer,
     baiTapGameXucXacReducer,
     baiTapQuanLyNguoiDungReducer,
-    FakeBookAppReducer
+    FakeBookAppReducer,
+    toDoListReducer,
+    modalReducer
 });
 
+let middleWare = applyMiddleware(reduxThunk);
 
-export const store = createStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+let composeCustom = compose(middleWare,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
+export const store = createStore(rootReducer,composeCustom);

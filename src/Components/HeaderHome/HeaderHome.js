@@ -24,6 +24,9 @@ export default class HeaderHome extends Component {
                         <li className="nav-item">
                             <NavLink exact activeClassName='bg-white text-dark'  className="nav-link" to="/login">Login</NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink exact activeClassName='bg-white text-dark'  className="nav-link" to="/demohocmodal">HOC</NavLink>
+                        </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hooks</a>
                             <div className="dropdown-menu" aria-labelledby="dropdownId">
@@ -33,6 +36,7 @@ export default class HeaderHome extends Component {
                                 <NavLink className="dropdown-item" to="/hookusememo">useMemo</NavLink>
                                 <NavLink className="dropdown-item" to="/hookuseref">useRef</NavLink>
                                 <NavLink className="dropdown-item" to="/hookredux">hookredux</NavLink>
+                                <NavLink className="dropdown-item" to="/todolist">To do list</NavLink>
                            
                             </div>
                         </li>
