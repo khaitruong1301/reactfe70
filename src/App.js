@@ -8,6 +8,7 @@ import Detail from './pages/Detail/Detail';
 import DemoHOCModal from './pages/HOC/DemoHOCModal/DemoHOCModal';
 import ModalHOC from './pages/HOC/DemoHOCModal/ModalHOC';
 import Home from './pages/Home/Home';
+import HomeMobile from './pages/Home/HomeMobile';
 import HookRedux from './pages/HookReact/HookRedux/HookRedux';
 import ParentComponent from './pages/HookReact/HookUseCallBack/ParentComponent';
 import HookUseEffect from './pages/HookReact/HookUseEffect/HookUseEffect';
@@ -16,6 +17,7 @@ import HookUseRef from './pages/HookReact/HookUseRef/HookUseRef';
 import HookUseState from './pages/HookReact/HookUseState/HookUseState';
 import ToDoList from './pages/HookReact/ToDoList/ToDoList';
 import Login from './pages/Login/Login';
+import Profile from './pages/Profile/Profile';
 import Register from './pages/Register/Register';
 import { AdminTemplate } from './templates/AdminTemplate';
 import { HomeTemplate } from './templates/HomeTemplate';
@@ -42,9 +44,10 @@ function App() {
         <HomeTemplate exact path={'/hookredux'} component={HookRedux} />
         <HomeTemplate exact path={'/todolist'} component={ToDoList} />
         <HomeTemplate exact path={'/demohocmodal'} component={DemoHOCModal} />
+        <HomeTemplate exact path={'/profile'} component={Profile} />
         <AdminTemplate exact path={'/demoantd'} component={DemoAntd} />
 
-        <HomeTemplate exact path={'/'} component={Home} />
+        <HomeTemplate exact path={'/'} component={Home} mobileComponent= {HomeMobile}/>
       </Switch>
       {/* <AdminTemplate /> */}
       <ModalHOC />

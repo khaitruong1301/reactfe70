@@ -1,6 +1,6 @@
 
 import axios from 'axios';
-import { ACCESSTOKEN, DOMAIN, TOKEN_CYBERSOFT, USER_LOGIN } from '../../util/setting';
+import { ACCESSTOKEN, DOMAIN, http, TOKEN_CYBERSOFT, USER_LOGIN } from '../../util/setting';
 import { history } from '../../util/setting';
 //userLogin: {taiKhoan:'',matKhau:''}
 export const dangNhapAction = (userLogin) => {
@@ -31,6 +31,38 @@ export const dangNhapAction = (userLogin) => {
             
         } catch (err) {
             console.log(err.response?.data)
+        }
+
+    }
+
+}
+
+
+export const layThongTinNguoiDung = () => {
+
+    return async (dispatch) => {
+
+        try{
+            let result = await http.post('/api/quanlynguoidung/thongtintaikhoan1');
+
+            console.log(result);
+            //dispatch kết quả lên redux
+            dispatch({
+                type:'LAY_THONG_TIN_NGUOI_DUNG',
+                userProfile: result.data.content
+            })
+            if(result.data.statusCode === 404) {
+                //dispatch reducer
+                alert('Đường dẫn không lệ !');
+            }
+
+        }catch(err){ 
+            // console.log('error',{err});
+            //dispatch thất bại
+            if(err.response.status === 404){
+                alert('Đường dẫn không lệ !');
+            }
+            console.log(err.response?.data);
         }
 
     }
